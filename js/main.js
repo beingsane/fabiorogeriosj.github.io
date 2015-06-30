@@ -8,6 +8,9 @@ app.run(function($rootScope) {
     $rootScope.go = function(link){
     	location.href=link;
     }
+    $rootScope.goHome = function(){
+    	location.href="/";
+    }
 });
 
 app.controller('indexController', function($scope, $http) {

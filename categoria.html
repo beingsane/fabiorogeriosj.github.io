@@ -15,18 +15,9 @@
   </head>
   <body ng-controller="categoriaController">
     <section class="page-header child animation">
-      <!-- incluir profile -->
       <div class="hidden animation" ng-class="{not: exibirProfile}">
-        <h1 class="project-name">Fábio Rogério SJ</h1>
-        <img class="profile" src="images/fabiorogeriosj.png" alt="Fábio Rogério SJ">
-        <h2 class="project-tagline">Endoidecido por tecnologia :)</h2>
-        <a href="https://facebook.com/fabiorogeriosj" target="_blank" class="btn">Facebook</a>
-        <a href="https://twitter.com/fabiorogeriosj" target="_blank" class="btn">Twitter</a>
-        <a href="https://www.linkedin.com/profile/view?id=80115964" target="_blank" class="btn">Linkedin</a>
-        <a href="https://github.com/fabiorogeriosj" target="_blank" class="btn">GitHub</a>
-        <h5>Email, Skype, gTalk: fabio.rogerio.sj@gmail.com</h5>
+        <div ng-init="profile='profile.html'" ng-include="profile"></div>
       </div>
-      <!-- fim inlcude -->
 
       <div class="main-content">
         <a class="menu-ico" ng-click="mostrarProfile()">

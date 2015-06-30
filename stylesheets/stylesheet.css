@@ -48,7 +48,7 @@ img.profile {
   padding: 0;
   color: #fff;
 }
-.page-header.child a {
+.page-header.child a.more {
   color: #fff;
   text-decoration: underline;
 }
