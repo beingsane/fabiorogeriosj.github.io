@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="fabiorogeriosj">
+  <head>
+    <meta charset="UTF-8">
+    <!-- alterar para cada artigo -->
+    <meta name="description" content="----------------" />
+    <meta name="keywords" content="Publicando um site sem pagar nada ou quase nada, hospedar site gratuito, github pages, fábio rogério sj, blog fábio rogério, blog desenvolvimento, blog webdesign, professor fábio rogério, __FBI__"/>
+    <meta name="robots" content="index, follow">
+
+    <title>Fábio Rogério SJ - Criando um site sem pagar nada ou quase nada</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body ng-controller="postController">
+    <section class="page-header child animation">
+      <div class="hidden animation" ng-class="{not: exibirProfile}">
+        <div ng-init="profile='profile.html'" ng-include="profile"></div>
+      </div>
+
+      <div class="main-content">
+        <a class="menu-ico" ng-click="mostrarProfile()">
+          <img src="images/menu.png">
+        </a>        
+        <!-- titulo -->
+        <h1>Post #Publicando um site sem pagar nada ou quase nada</h1>
+        <h5>
+          <span ng-bind="post.data"></span> em <a ng-href="categoria.html#{{post.categoria}}" ng-bind="post.categoria"></a>
+        </h5>
+      </div>
+    </section>
+    <!-- artigo -->
+    <section class="main-content lasts-posts read-post">
+      <div class="preview">
+      	<img src="images/posts/post1.png">
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis, arcu in hendrerit consequat, justo sapien pretium sapien, dictum posuere felis turpis non ligula. Sed sit amet mi non lectus sagittis pellentesque nec ac tortor. Aliquam quis dictum nunc, a volutpat ligula. Donec semper enim ut nisl luctus egestas. Proin ante magna, maximus at ante vitae, laoreet dictum eros.</p>      
+      <footer class="site-footer" ng-init="footer='rodape.html'" ng-include="footer"></footer>
+
+    </section>
+
+  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+  <script type="text/javascript" src="js/posts.json.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
+

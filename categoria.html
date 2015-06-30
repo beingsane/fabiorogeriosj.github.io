@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="fabiorogeriosj">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Formado em Sistemas para Internet e pós graduado em Administração de banco de dados Oracle e DB2, sou um cara que acredito que o mundo pode ser mudado e moldado pela tecnologia!" />
+    <meta name="keywords" content="fábio rogério sj, blog fábio rogério, blog desenvolvimento, blog webdesign, professor fábio rogério, __FBI__"/>
+    <meta name="robots" content="index, follow">
+
+    <title>Fábio Rogério SJ - Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body ng-controller="categoriaController">
+    <section class="page-header child animation">
+      <!-- incluir profile -->
+      <div class="hidden animation" ng-class="{not: exibirProfile}">
+        <h1 class="project-name">Fábio Rogério SJ</h1>
+        <img class="profile" src="images/fabiorogeriosj.png" alt="Fábio Rogério SJ">
+        <h2 class="project-tagline">Endoidecido por tecnologia :)</h2>
+        <a href="https://facebook.com/fabiorogeriosj" target="_blank" class="btn">Facebook</a>
+        <a href="https://twitter.com/fabiorogeriosj" target="_blank" class="btn">Twitter</a>
+        <a href="https://www.linkedin.com/profile/view?id=80115964" target="_blank" class="btn">Linkedin</a>
+        <a href="https://github.com/fabiorogeriosj" target="_blank" class="btn">GitHub</a>
+        <h5>Email, Skype, gTalk: fabio.rogerio.sj@gmail.com</h5>
+      </div>
+      <!-- fim inlcude -->
+
+      <div class="main-content">
+        <a class="menu-ico" ng-click="mostrarProfile()">
+          <img src="images/menu.png">
+        </a>        
+        <h1>Categoria #<span ng-bind="categoria"></span></h1>
+        <h5>
+          <span ng-bind="postsPorCategoria.length"></span>
+          <span ng-show="postsPorCategoria.length <= 1">artigo</span>
+          <span ng-show="postsPorCategoria.length > 1">artigos</span>
+        </h5>
+      </div>
+    </section>
+
+    <section class="main-content">
+      
+      <section class="lasts-posts">
+        
+        <div class="post" ng-repeat="post in postsPorCategoria = (posts | filter:categoria)">
+         <div class="preview" ng-click="go(post.link)">
+            <img ng-src="images/posts/{{post.imagem}}">
+          </div>
+          <h4 ng-bind="post.titulo" ng-click="go(post.link)"></h4>
+          <h5> <span ng-bind="post.data"></span> em <a ng-href="categoria.html#{{post.categoria}}" ng-bind="post.categoria"></a></h5>
+          <p ng-bind="post.descricao"></p>
+          <a ng-href="{{post.link}}">continuar lendo</a>
+        </div>
+      
+      </section>
+
+
+      <footer class="site-footer" ng-init="footer='rodape.html'" ng-include="footer"></footer>
+
+    </section>
+
+  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+  <script type="text/javascript" src="js/posts.json.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
+
