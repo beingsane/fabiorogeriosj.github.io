@@ -2,9 +2,9 @@ var posts = [
 	{
 		"categoria":"Hospedagem",
 		"imagem":"post1.png",
-		"titulo":"Publicando um site sem pagar nada ou quase nada!",
+		"titulo":"Publicando um site sem pagar nada, ou quase nada!",
 		"data":"30/06/2015",
-		"descricao":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis, arcu in hendrerit consequat, justo sapien pretium sapien, dictum posuere felis turpis non ligula. Sed sit amet mi non lectus sagittis pellentesque nec ac tortor. Aliquam quis dictum nunc, a volutpat ligula. Donec semper enim ut nisl luctus egestas. Proin ante magna, maximus at ante vitae, laoreet dictum eros.",
+		"descricao":"Quem já não se deparou com a seguinte situação: Preciso publicar um site, bem simples e estático, porem acho carro pagar R$ 19,90 por mês! Neste post vou explicar de forma prática e simples como hospedar um site sem pagar nada ou quase nada :), dependendo da extensão do domínio!",
 		"link":"publicando-um-site-sem-pagar-nada-ou-quase-nada.html"
 	}
 ]
