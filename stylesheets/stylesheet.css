@@ -16,6 +16,7 @@ img.profile {
   max-width: 175px;
   border: 4px solid #fff;
   margin-top: 20px;
+  cursor: pointer;
 }
 .animation {
  
@@ -56,6 +57,9 @@ img.profile {
   margin: 0;
   padding: 0;
   color: #BBB;
+}
+.project-name {
+  cursor: pointer;
 }
 .page-header .main-content {
   text-align: left;
