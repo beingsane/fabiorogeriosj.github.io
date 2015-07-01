@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <!-- alterar para cada artigo -->
-    <meta name="description" content="Quem já não se deparou com a seguinte situação: Preciso publicar um site, bem simples e estático, porem acho carro pagar R$ 19,90 por mês! Neste post vou explicar de forma prática e simples como hospedar um site sem pagar nada ou quase nada :), dependendo da extensão do domínio!" />
-    <meta name="keywords" content="Publicando um site sem pagar nada ou quase nada, hospedar site gratuito, github pages, fábio rogério sj, blog fábio rogério, blog desenvolvimento, blog webdesign, professor fábio rogério, __FBI__"/>
+    <meta name="description" content="Quem já não se deparou com a seguinte situação: Preciso publicar um site, bem simples e estático, porem acho carro pagar R$ 19,90 por mês! Neste post vou explicar de forma prática e simples como hospedar um site sem pagar nada :)!" />
+    <meta name="keywords" content="Publicando um site sem pagar nada, hospedar site gratuito, github pages, fábio rogério sj, blog fábio rogério, blog desenvolvimento, blog webdesign, professor fábio rogério, __FBI__"/>
     <meta name="robots" content="index, follow">
 
     <title>Fábio Rogério SJ - Criando um site sem pagar nada, ou quase nada</title>
@@ -25,7 +25,7 @@
           <img src="images/menu.png">
         </a>        
         <!-- titulo -->
-        <h1>Post #Publicando um site sem pagar nada ou quase nada</h1>
+        <h1>Post #Publicando um site sem pagar nada</h1>
         <h5>
           <span ng-bind="post.data"></span> em <a class="more" ng-href="categoria.html#{{post.categoria}}" ng-bind="post.categoria"></a>
         </h5>
@@ -39,7 +39,7 @@
       <p>
       	Quem já não se deparou com a seguinte situação: Preciso publicar um site, bem simples e estático, porem acho carro pagar R$ 19,90 por mês!
       	<br>
-      	Neste post vou explicar de forma prática e simples como hospedar um site sem pagar nada ou quase nada :)
+      	Neste post vou explicar de forma prática e simples como hospedar um site sem pagar nada :)
       </p>
       <p>Primeiro precisamos revisar o que é necessário para publicar um site:</p>
       <p>
@@ -52,7 +52,6 @@
       </p>
       <h3>Criar um domínio</h3>
       <p>A escolha do domínio do site, ou a identidade principal do site, deve ser escolhida com base no nome do serviço, empresa, produto ao algo relacionado ao publico alvo do site. Os domínios mais utilizados no Brasil é .com e .com.br!</p>
-      <p>O que irá mudar, no contexto deste post com a escolha do domínio, é que se for <b>.com</b> você poderá publicar um site sem pagar nada por mês referente a hospedagem, apenas o valor do domínio. Se optar por um domínio <b>.com.br</b> você precisará de um servidor de DNS e irá pagar $0,50 centavos por mês.</p>
 
       <h4>Registrando um domínio <b>.com</b></h4>
       <p>É possível registrar um domínio em vários sites pela web! O que eu uso, e recomendo, é o <a target="_blank" href="https://br.godaddy.com/">Godaddy.com</a>.</p>
@@ -70,9 +69,122 @@
 
       <h3>Hospedar o site</h3>
       <p>Aqui vem nosso ponto crucial para este post, onde hospedar seu site?</p>
-      <p>Existe várias serviços que oferecem hospedagem gratuíta para site, e eu usei muitos destes serviços para testar e avaliar :), o que eu mais gostei foi o <a target="_blank" href="https://pages.github.com/">GitHub Pages</a> e vou excplicar o porque desta escolha entre muitos.</p>
-      <p>...contiua...</p>
-      
+      <p>Existe várias serviços que oferecem hospedagem gratuíta para site, e eu usei muitos destes serviços para testar e avaliar :), o que mais gostei foi o <a target="_blank" href="https://pages.github.com/">GitHub Pages</a> e vou excplicar o porque desta escolha entre muitos.</p>
+      <h4>Porque hospedar seu site no GitHub Pages?</h4>
+      <p>
+      	Acho que o primeiro ponto é o versionamento dos arquivos, como todos os serviços do GitHub são baseados no Git isso facilita e muito nossa tarefa de versionar as versões do site, atualizar, etc! Se você ainda não conhece sobre Git, sugiro você ver <a target="_blank" href="https://youtu.be/UMhskLXJuq4">este vídeo</a> antes de continuar.
+      </p>
+      <p>Outro ponto é o fato do GitHub ser gratuíto para projetos públicos, mas como assim? O código fonte do meu site vai ficar aberto para qualquer um ver?</p>
+      <p>A resposta é sim! Se seu site é estático então não tem problema de ficar aberto, pois se for estático significa que tudo roda do lado do cliente, então o usuário pode ir em "salvar página" e pronto ele terá seu site completo. Sendo assim isso não é um problema para este tipo de projeto.</p>
+      <p>Então vamos la! Vou mostrar os passos, considerando que você já tenha o site implementado em HTML/CSS/JS, para publicar o site via GitHub Pages.</p>
+
+      <h4>
+      	<div class="mark">1</div>
+      	Criando um repositório
+      </h4>
+      <p>Primeiro você precisa criar um repositório com o seu nome de usuário mais .github.io. Isso para site pessoal:</p>
+      <p class="center">
+      	<img src="images/posts/github1.jpg">
+      </p>
+      <p>Caso você queira criar um site para outro nome diferente do seu nome de usuário você primeiro deve criar um organização:</p>
+      <p class="center">
+        <img src="images/posts/github6.jpg">
+      </p>
+      <p>Depois criar o repositório:</p>
+      <p class="center">
+        <img src="images/posts/github7.jpg">
+      </p>
+      <p>Outra ponto interessante do GitHug Pages é que ele disponibiliza alguns layout prontos para você criar um site! Mas deixamos isso para um outro momento.</p>
+      <h4>
+      	<div class="mark">2</div>
+      	Clone seu repositório em sua maquina
+      </h4>
+      <p>Agora vamos clonar o repositório para poder inserir os arquivos do site. É possível interagir com o GitHub atravez de software para Windows e Mac, massss a melhor forma, na minha opinião é via terminal.</p>
+      <p>Para usar o git em sua maquina você deve ter instalado o git, caso não tenha ainda entre no site do <a target="_blank" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git</a> e veja as instruções com base no seu sistema operacional.</p>
+      <p>Tendo o software Git instalado vamos clonar o repositório. Após ter criado você verá a URL do seu repositório:</p>
+      <p class="center">
+      	<img src="images/posts/github2.jpg">
+      </p>
+      <p>Entre no terminal e digite (trocando a URL para a do seu repositório:</p>
+      <div class="terminal">
+        <div class="header"></div>
+        <div class="shell">
+          <p>git clone https://github.com/fabiorogeriosj/fabiorogeriosj.github.io.git</p>
+        </div>
+      </div>
+      <p>Coloque todos seus arquivos nesta pasta e crie um arquivo chamado CNAME com o domínio do seu site:</p>
+      <p class="center">
+        <img src="images/posts/github3.jpg">
+      </p>
+       <h4>
+        <div class="mark">3</div>
+        Atualizando repositório
+      </h4>
+      <p>Agora vamos comitar os arquivos alterados, em outras palavras, vamos atualizar o respositório nas núvens, digite no terminal dentro da pasta do seu projeto:</p>
+      <div class="terminal">
+        <div class="header"></div>
+        <div class="shell">
+          <p>git add --all</p>
+          <p>git commit -m "Atualizando site"</p>
+          <p>dit push -u origin master</p>
+        </div>
+      </div>
+      <p>Será solicitado seu e-mail e senha de acesso ao GitHub.</p>
+      <h4>
+        <div class="mark">4</div>
+        Conferir escuta de domínio
+      </h4>
+      <p>Após comitar os arquivos aguarde uns 5 minutos e vá em <em>Setting</em> do seu repositório e veja se o domínio já esta sendo escutado pelo GitHub:</p>
+      <p class="center">
+        <img src="images/posts/github4.jpg">
+      </p>
+       <p class="center">
+        <img src="images/posts/github5.jpg">
+      </p>
+      <h4>
+        <div class="mark">4</div>
+        Configurando domínio
+      </h4>
+      <p>Se você entrar na URL seuusuariogit.github.io você verá que foi redirecionado para o seu domínio configurado em CNAME! Agora temos que configurar o domínio registrado para direcionar para os servidores do GitHub!</p>
+      <h4>Configurando <b>.com</b></h4>
+      <p>Domínio .com é o mais simples e não precisa pagar nada para ter um DNS, entre no painel do <a target="_blank" href="https://br.godaddy.com/">Godaddy.com</a> e vai em gerenciar meus domínios:</p>
+      <p>Em "Arquivo de Zona DNS" crie dois registro (se já exisitr altere) um como Host:</p>
+       <p class="center">
+        <img src="images/posts/github8.jpg">
+      </p>
+      <p>Com os seguintes dados:</p>
+       <p class="center">
+        <img src="images/posts/github9.jpg">
+      </p>
+      <p>E um outro registro para CNAME com os seguintes dados:</p>
+       <p class="center">
+        <img src="images/posts/github10.jpg">
+      </p>
+      <p>Em "Apontar para" você deve colocar o nome do seu repositório.</p>
+      <p>Aguarde alguns minutos para o DNS propagar e teste seu site, você veja que ele estará respondendo no domínio criado :)</p>
+      <p class="center">
+        <img src="images/posts/github11.jpg">
+      </p>
+
+      <h4>Configurando <b>.com.br</b></h4>
+      <p>Até um tempo atraz o Registro.br não disponibilizava um servidor DNS, mas nossos problemas terminaram, agora é possível usar o próprio servidor deles :)</p>
+      <p>Entre no painel do Registro.br e clique no domínio que você criou:</p>
+      <p class="center">
+        <img src="images/posts/github12.jpg">
+      </p>
+      <p>Clique em modo avançado:</p>
+      <p class="center">
+        <img src="images/posts/github13.jpg">
+      </p>
+      <p>Adicione duas entradas, uma com o tipo "A" com o campo acima do domínio vazio para o endereço: 192.30.252.153. E outro com o tipo CNAME com o campo "www" para o nome do seu repositório:</p>
+      <p class="center">
+        <img src="images/posts/github14.jpg">
+      </p>
+      <p>Aguarde até o registro.br propagar seu DNS e pronto, seu site estará no ar :)</p>
+      <p class="center">
+        <img src="images/posts/github15.jpg">
+      </p>
+
 
 
       <footer class="site-footer" ng-init="footer='rodape.html'" ng-include="footer"></footer>
