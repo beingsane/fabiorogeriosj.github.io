@@ -27,6 +27,71 @@ img.profile {
   margin-right: 15px;
   cursor: pointer;
 }
+.event {
+  max-width: 750px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #ececec;
+  border: 1px solid #fff;
+  text-align: left;
+  margin: auto;
+  margin-top: 55px;
+}
+small {
+  display: block;
+}
+.event .title {
+  color: #2a2a2a;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);
+  display: table;
+  margin: 0 auto;
+}
+.event label {
+  font-size: 20px;
+  text-align: left;
+}
+.event h1 {
+  font-size: 64px;
+  font-weight: 800;
+  margin: 0;
+  padding: 0;
+  margin-top: -30px;
+}
+.event .detail .op {
+  float: left;
+  color: #2a2a2a;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);
+  display: table;
+  font-size: 14px;
+  margin: 40px;
+  margin-top: 10px;
+}
+.event .detail .op label {
+  font-weight: 400;
+  font-size: 16px;
+}
+.event h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: 800;
+  line-height: 15px;
+  letter-spacing: -1px;
+}
+.event .detail .op:first-child {
+  margin-left: 36px;
+}
+.event .actions {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.event .btn {
+  background-color: rgba(21, 126, 115, 1);
+  width: 200px;
+}
+.event .btn:hover {
+  background-color: rgba(16, 89, 81, 1);
+}
 .lasts-posts.read-post .preview {
   width: 100%;
   float: none;
@@ -47,6 +112,20 @@ p.center {
   text-align: center;
   margin-right: 10px;
   margin-top: -5px;
+}
+.mark2 {
+  background-color: #ea505e;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px;
+  margin: 0 auto;
+  margin-top: -30px;
+  width: 200px;
+  text-align: center;
 }
 .main-content :first-child.mark {
   margin-top: -5px;
@@ -262,7 +341,12 @@ a {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: normal;
-  color: #159957; }
+  color: #159957; 
+}
+.main-content h3 {
+  border-top: 1px solid;
+  padding-top: 10px;
+}
 .main-content p {
   margin-bottom: 1em; }
 .main-content .terminal p {
@@ -374,7 +458,26 @@ p.old {
 @media screen and (max-width: 42em) {
   .main-content {
     padding: 2rem 1rem;
-    font-size: 1rem; } }
+    font-size: 1rem; } 
+    .event .title {
+      text-align: center;
+    }
+    .event .detail .op:first-child {
+      margin: 0;
+      margin-bottom: 20px;
+    }
+    .event .detail .op {
+      margin: 0;
+      margin-bottom: 20px;
+      float: none;
+      text-align: center;
+      width: 100%;
+    }
+    .event .btn {
+      margin: auto;
+    }
+
+  }
 
 .site-footer {
   padding-top: 2rem;

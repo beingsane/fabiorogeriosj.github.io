@@ -16,16 +16,110 @@
   <body ng-controller="indexController">
     <section class="page-header">
       <h1 class="project-name" ng-click="goHome()">Fábio Rogério SJ</h1>
-      <img class="profile" src="images/fabiorogeriosj.png" alt="Fábio Rogério SJ" ng-click="goHome()">
+      <!-- <img class="profile" src="images/fabiorogeriosj.png" alt="Fábio Rogério SJ" ng-click="goHome()"> -->
       <h2 class="project-tagline">Endoidecido por tecnologia :)</h2>
       <a href="https://facebook.com/fabiorogeriosj" target="_blank" class="btn">Facebook</a>
       <a href="https://twitter.com/fabiorogeriosj" target="_blank" class="btn">Twitter</a>
       <a href="https://www.linkedin.com/profile/view?id=80115964" target="_blank" class="btn">Linkedin</a>
       <a href="https://github.com/fabiorogeriosj" target="_blank" class="btn">GitHub</a>
       <h5>Email, Skype, gTalk: fabio.rogerio.sj@gmail.com</h5>
+      <div class="event" ng-show="runInscricao">
+        <br>
+        <iframe src="https://docs.google.com/forms/d/1EJPdgU2-JQ_8SrusIjZZCvnK3-xoWH0PPjrCMVfKzBA/viewform?embedded=true" width="100%" height="720" frameborder="0" marginheight="0" marginwidth="0">Carregando...</iframe>
+      </div>
+      <div class="event">
+        <div class="mark2">
+          INSCRIÇÕES EM ABERTO (vagas limitadas)
+        </div>
+        <div class="title">
+           <label>Treinamento:</label>
+          <h1>AngularJS em ação</h1>
+        </div>
+        <div class="detail">
+          <div class="op">
+            <label>Data/Hora:</label>
+            <h3>14/07, 15/07, 21/07 e 23/07<br>das 7pm as 10pm</h3>
+          </div>
+          <div class="op">
+            <label>Local:</label>
+            <h3>Avenida Carneiro Leão<br>65, SL 1408 <a href="https://www.google.com.br/maps/place/Condom%C3%ADnio+Centro+Empresarial+Transam%C3%A9rica/@-23.419893,-51.9439912,17z/data=!3m1!4b1!4m2!3m1!1s0x94ecd729bb718cb3:0xa4ad0898526f7151" target="_blank">(ver mapa)</a></h3>
+          </div>
+          <div class="op">
+            <label>Investimento:</label>
+            <h3>R$ 130,00</h3>
+            <h3>R$ 100,00 (ex-alunos)</h3>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="btn" ng-click="showDetail()">Detalhes</a>
+          <a class="btn" ng-click="fazerInscricao()">Fazer inscrição</a>
+        </div>
+      </div>
     </section>
 
     <section class="main-content">
+      <div class="detail-event" ng-show="showDetailEvent">
+        <h3>
+          <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Sobre o treinamento: AngularJS em Ação
+        </h3>
+        <p>
+          O treinamento em AngularJS tem como objetivo aprender e praticar, de forma direta, as principais funcionalidades deste framework fantástico!
+          <br>
+          Para realizar o treinamento é necessário <b>conhecimento básico</b> na linguagem JavaScript.
+        </p>  
+        <p><b>Conteúdo:</b></p>
+        <p>
+          <ul>
+            <li>
+              Introdução ao AngularJS
+              <small>
+                Explicação dos conceitos de AngularJS, para que ele foi criado, o que é SPA, etc.
+              </small>
+            </li>
+            <li>
+              Directives
+              <small>
+                Directive é uma maneira de criar novas funcionalidades em HTML.
+              </small>
+            </li>
+            <li>
+              Data Binding
+              <small>A magia do AngularJS esta em seu Data Binding, onde os elementos HTML são atualizados automático quando um modelo é alterado.</small>
+            </li>
+            <li>
+              Filters
+              <small>Uma forma simples de filtrar valores em objetos.</small>
+            </li>
+            <li>
+              Views
+              <small>Páginas HTML que é manipulada pelos binding do AngularJS.</small>
+            </li>
+            <li>
+              Controllers
+              <small>Um controller é um objeto JavaScript contendo atributos e ações.</small>
+            </li>
+            <li>
+              Scope
+              <small>Scope é o responsável por controlador ligar os objetos do controller com as views.</small>
+            </li>
+            <li>
+              Modules
+              <small>AngularJS suporta módulos externos do seu Core, semelhante a plugin.</small>
+            </li>
+            <li>
+              Routes
+              <small>Controlar as rotas de diferentes Views e Controllers.</small>
+            </li>
+            <li>
+              Factories e Services
+              <small>Encapsulamento de funcionalidades que podem ser invocados entre diferentes controllers.</small>
+            </li>
+          </ul>
+        </p>
+      </div>
       <h3>
         <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true">
           <span class="octicon octicon-link"></span>

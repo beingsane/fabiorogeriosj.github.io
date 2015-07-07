@@ -11,6 +11,13 @@ app.run(function($rootScope) {
     $rootScope.goHome = function(){
     	location.href="/";
     }
+    $rootScope.showDetail = function(){
+    	$rootScope.showDetailEvent=true;
+    	window.scroll(0,700);
+    }
+    $rootScope.fazerInscricao = function(){
+    	$rootScope.runInscricao=true;
+    }
 });
 
 app.controller('indexController', function($scope, $http) {
