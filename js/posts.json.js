@@ -1,5 +1,13 @@
 var posts = [
 	{
+		"categoria":"Ionic",
+		"imagem":"post2.png",
+		"titulo":"Desenvolvendo aplicativos mobile com Ionic - Post #1",
+		"data":"21/09/2015",
+		"descricao":"Sempre digo que a maior dificuldade do desenvolvimento de um aplicativo é a ideia, tecnologia é uma parte do processo e não o primordial! Nesta séria de post vou explicar o por que de utilizar o framework ionic e como utiliza-lo.",
+		"link":"desenvolvendo-aplicativos-mobile-ionic-post-1.html"
+	},
+	{
 		"categoria":"Hospedagem",
 		"imagem":"post1.png",
 		"titulo":"Publicando um site sem pagar nada!",
