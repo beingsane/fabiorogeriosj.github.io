@@ -23,6 +23,13 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+
+    <link rel="stylesheet" href="http://codemirror.net/lib/codemirror.css">
+    <script src="http://codemirror.net/lib/codemirror.js"></script>
+    <script src="http://codemirror.net/addon/edit/matchbrackets.js"></script>
+    <script src="http://codemirror.net/addon/edit/continuecomment.js"></script>
+    <script src="http://codemirror.net/mode/javascript/javascript.js"></script>
+
   </head>
   <body ng-controller="postController">
     <section class="page-header child animation">
@@ -46,8 +53,374 @@
       <div class="preview">
       	<img src="images/posts/free-desenvolvendo-app-ionic_post.jpg">
       </div>
-      <p>Editando...</p>
-     
+      
+
+      <p>Eu poderia começar esta série de posts mostrando gráficos de como o acesso de aplicativos está em alta e cada vez mais as soluções estão sendo disponibilizadas nos devices.</p>
+      <p>Mas o objetivo dessa seria de posts é ensinar, de forma prática, desenvolver aplicativos utilizando tecnologias simples.</p>
+      <p>Desenvolver aplicativos móveis não é muito complexo como alguns imaginam, você precisa primeiro ter uma ideia bacana!</p>
+      <p>Após definido a ideia você deve analisar vários fatores tais como:</p>
+      <ul>
+        <li>Quem é seu publico alvo;</li>
+        <li>Para quais plataformas, e sistemas operacionais, você irá disponibilizar seu aplicativo;</li>
+        <li>E qual o conhecimento que você e/ou seu time tem sobre desenvolvimento de sistemas.</li>
+      </ul>
+      <p>O publico alvo ajuda a definir que linha de design você ira usar, por exemplo se seu publico alvo for crianças de até 8 anos, com certeza seu layout será mais lúdico e explicativo do que se fosse para jovens de 16 a 28 anos.</p>
+      <p>Definir quais plataformas e sistemas operacionais é o ponto crucial pela definição de usar, ou não, um framework como Ionic. Se você for desenvolver um aplicativo apenas para dispositivos móveis e apenas um sistema operacional, como Android, talvez a escolha do Ionic não seja a melhor opção, mas você deve analisar ainda o próximo item para ter certeza se ira desenvolver seu aplicativo nativo ou não!</p>
+      <p>Outro ponto de análise é o seu, e de seu time se existir, conhecimento sobre programação.</p>
+      <p>Existem duas formas de desenvolver aplicativos, uma é utilizando o próprio SDK e IDE do sistema operacional como Android Studio para Android, ou Xcode para iOS, entre outros, ou utilizar um framework que executa em um webview seu app desenvolvido em HTML5/CSS/JS!</p>
+      <p>Estes pontos tem que serem bem analisados para, de fato, tomar uma decisão. Depois de eu ter desenvolvido vários aplicativos, tanto nativo quanto com frameworks, percebi que o ganho e performance é pequeno perante os benefícios que utilizar um framework webview proporciona!</p>
+      <p>Então qual a melhor tecnologia para desenvolver aplicativos móveis?</p>
+      <p>Para mim a melhor tecnologia é aquela que você domina!</p>
+      <p><b>E por que utilizar o Ionic?</b></p>
+      <p>Porque é simples, rápido e fácil criar aplicativos com ele e tem suporte a AngularJS que deixa muito mais simples a manipulação dos dados.</p>
+      <p>Então vamos lá! O primeiro passo é preparar o ambiente de desenvolvimento.</p>
+      
+      <h2>Instalando ambiente para desenvolver com Ionic</h2>
+      <p>Para começar a desenvolver com Ionic precisamos preparar e instalar o ambiente de desenvolvimento, para isso vamos precisar de:</p>
+      <ul>
+        <li>Instalar Node.js</li>
+        <li>Instalar Cordova</li>
+        <li>Instalar Ionic</li>
+        <li>Instalar o SDK da plataforma que deseja criar o aplicativo</li>
+      </ul>
+      <p>Em outro post irei detalhar mais o que são cada uma dessas dependências, neste momento o importante é deixar o ambiente instalado.</p>
+      <p>Precisamos do NodeJS para usar o NPM, que é um gerenciador de pacotes para NodeJS, com ele ficará mais simples realizar a instalação das dependências do Ionic.</p>
+      <p>Acesse <a href="https://nodejs.org" title="NodeJS" target="_blank">https://nodejs.org</a> e baixe a última versão do NodeJS.</p>
+      <p class="center">
+        <img src="images/posts/sitenodejs.JPG">        
+      </p>
+      <p>O Ionic, como o NPM, são aplicações command-line, ou seja, são executados em linha de comando em um terminal.</p>
+      <p>Após instalar o NodeJS vamos instalar as outras dependências do Ionic. Abra um terminal, no caso do Windows vai em iniciar > executar > digite CMD, ou use o atalho: Window + R</p>
+      <p class="center">
+        <img src="images/posts/cmd.JPG">
+      </p>
+      <p>No terminal digite npm, se aparecer algo como isso é porque o NodeJS foi instalado com sucesso.</p>
+
+      <div class="terminal">
+        <div class="header">Terminal</div>
+        <div class="shell">
+          <p>
+            <span class="path">~</span>
+            <span class="prompt">$</span>
+            npm
+          </p>
+<pre class="output">Usage: npm <command>
+
+where <command> is one of:
+    access, add-user, adduser, apihelp, author, bin, bugs, c,
+    cache, completion, config, ddp, dedupe, deprecate, dist-tag,
+    dist-tags, docs, edit, explore, faq, find, find-dupes, get,
+    help, help-search, home, i, info, init, install, issues, la,
+    link, list, ll, ln, login, logout, ls, outdated, owner,
+    pack, ping, prefix, prune, publish, r, rb, rebuild, remove,
+    repo, restart, rm, root, run-script, s, se, search, set,
+    show, shrinkwrap, star, stars, start, stop, t, tag, team,
+    test, tst, un, uninstall, unlink, unpublish, unstar, up,
+    update, upgrade, v, verison, version, view, whoami
+
+npm <cmd> -h     quick help on <cmd>
+npm -l           display full usage info
+npm faq          commonly asked questions
+npm help <term>  search for help on <term>
+npm help npm     involved overview
+
+Specify configs in the ini-formatted file:
+    C:\Users\fabio\.npmrc
+or on the command line via: npm <command> --key value
+Config info can be viewed via: npm help config
+
+npm@2.14.4 C:\nodejs\node_modules\npm
+</pre>
+
+        </div>
+      </div>
+      <p>Agora vamos instalar o Cordova e o Ionic. Digite: <b>npm install -g cordova ionic</b></p>
+      <div class="terminal">
+        <div class="header">Terminal</div>
+        <div class="shell">
+          <p>
+            <span class="path">~</span>
+            <span class="prompt">$</span>
+            npm install -g cordova ionic
+          </p>
+<pre class="output">
+├── cli-table@0.3.1 (colors@1.0.3)
+├── form-data@0.1.4 (mime@1.2.11, combined-stream@0.0.7)
+├── serve-static@1.7.1 (utils-merge@1.0.0, escape-html@1.0.1, parseurl@1.3.0, send@0.10.1)
+├── opbeat-ionic@1.1.3 (console-log-level@1.1.0, json-stringify-safe@5.0.1, stac kman@0.2.3, after-all@2.0.2)
+├── tiny-lr-fork@0.0.5 (debug@0.7.4, qs@0.5.6, faye-websocket@0.4.4, noptify@0.0.3)
+├── request@2.51.0 (aws-sign2@0.5.0, forever-agent@0.5.2, caseless@0.8.0, tunnel-agent@0.4.1, oauth-sign@0.5.0, stringstream@0.0.4, json-stringify-safe@5.0.1, mime-types@1.0.2, qs@2.3.3, node-uuid@1.4.3, tough-cookie@2.0.0, combined-stream@0.0.7, bl@0.9.4, form-data@0.2.0, http-signature@0.10.1, hawk@1.1.1)
+├── vinyl-fs@0.3.7 (graceful-fs@3.0.8, lodash@2.4.2, strip-bom@1.0.0, vinyl@0.4.6, mkdirp@0.5.1, through2@0.6.5, glob-stream@3.1.18, glob-watcher@0.0.6)
+├── prompt@0.2.12 (revalidator@0.1.8, pkginfo@0.3.0, read@1.0.6, winston@0.6.2,utile@0.2.1)
+├── unzip@0.1.9 (setimmediate@1.0.2, readable-stream@1.0.33, pullstream@0.4.1, match-stream@0.0.2, binary@0.3.0, fstream@0.1.31)
+├── gulp@3.8.8 (interpret@0.3.10, pretty-hrtime@0.2.2, deprecated@0.0.1, archy@0.0.2, minimist@1.1.2, semver@3.0.1, tildify@1.1.0, chalk@0.5.1, orchestrator@0.3.7, gulp-util@3.0.6, liftoff@0.12.1)
+├── cheerio@0.19.0 (entities@1.1.1, dom-serializer@0.1.0, css-select@1.0.0, htmlparser2@3.8.3, lodash@3.10.0)
+├── xml2js@0.4.4 (sax@0.6.1, xmlbuilder@2.6.4)
+├── npm@2.1.3
+└── ionic-app-lib@0.3.8 (vinyl-fs@1.0.0, archiver@0.5.2, ionic-cordova-lib@5.1.7)
+</pre>
+        </div>
+      </div>
+      <p>Se tudo ocorrer bem e nada der errado :) você verá algo semelhante ao apresentado acima</p>
+      <p>Isso indica que o Ionic, e suas dependências, foram instalados, se algum erro for apresentado na linha de comando, verifique nos comentários deste post se já não foi ocorrido com outro leitor e se já não foi dado a solução. Caso der erro e não estiver no comentário, favor inserir como comentário para que possamos solucionar e já deixar de ajuda para outros!</p>
+      <p>Para testar digite:<b> ionic --version</b></p>
+<div class="terminal">
+<div class="header">Terminal</div>
+<div class="shell">
+<p>
+<span class="path">~</span>
+<span class="prompt">$</span>
+ionic --version
+</p>
+<pre class="output">
+1.6.4
+</pre>
+</div>
+</div>
+
+      <p>Uma etapa está pronta, então vamos criar nosso primeiro aplicativo. No terminal digite: <b>ionic start primeiroApp blank</b></p>
+<div class="terminal">
+<div class="header">Terminal</div>
+<div class="shell">
+<p>
+<span class="path">~</span>
+<span class="prompt">$</span>
+ionic start primeiroApp blank
+</p>
+<pre class="output">
+Creating Ionic app in folder C:\Users\fabio\primeiroApp based on blank project
+Downloading: https://github.com/driftyco/ionic-app-base/archive/master.zip
+[=============================]  100%  0.0s
+Downloading: https://github.com/driftyco/ionic-starter-blank/archive/master.zip
+[=============================]  100%  0.0s
+Updated the hooks directory to have execute permissions
+Update Config.xml
+Initializing cordova project
+
+Your Ionic project is ready to go! Some quick tips:
+
+ * cd into your project: $ cd primeiroApp
+
+ * Setup this project to use Sass: ionic setup sass
+
+ * Develop in the browser with live reload: ionic serve
+
+ * Add a platform (ios or Android): ionic platform add ios [android]
+   Note: iOS development requires OS X currently
+   See the Android Platform Guide for full Android installation instructions:
+   https://cordova.apache.org/docs/en/edge/guide_platforms_android_index.md.html
+
+
+ * Build your app: ionic build <PLATFORM>
+
+ * Simulate your app: ionic emulate <PLATFORM>
+
+ * Run your app on a device: ionic run <PLATFORM>
+
+ * Package an app using Ionic package service: ionic package <MODE> <PLATFORM>
+
+For more help use ionic --help or ionic docs
+
+Visit the Ionic docs: http://ionicframework.com/docs
+
+
+Create an ionic.io account to send Push Notifications and use the Ionic View app?
+(Y/n):
+</pre>
+</div>
+</div>
+<p>Na primeira vez que você cria um app o Ionic ira perguntar se você deseja criar uma conta para usar alguns dos serviços online dele. Nesta etapa responda não, digitando <b>n</b> e precionando ENTER:</p>
+<div class="terminal">
+<div class="header">Terminal</div>
+<div class="shell">
+<p>
+<span class="path">~</span>
+<span class="prompt">$</span>
+(Y/n): n
+</p>
+<pre class="output">
++---------------------------------------------------------+
++ New Ionic Updates for September 2015
++
++ The View App just landed. Preview your apps on any device
++ http://view.ionic.io
++
++ Invite anyone to preview and test your app
++ ionic share EMAIL
++
++ Generate splash screens and icons with ionic resource
++ http://ionicframework.com/blog/automating-icons-and-splash-screens/
++
++---------------------------------------------------------+
+</pre>
+</div>
+</div>
+<p>Pronto! App criado :)</p>
+<p>Este comando cria uma nova estrutura para um aplicativo que vamos chamar de primeiroApp sem nenhum template.</p>
+<p>Para testar seu aplicativo entre na pasta do projeto criado, digite <b>cd primeiroApp</b>, e digite: <b>ionic serve</b> para seu app ser exibido no navegador.</p>
+<div class="terminal">
+<div class="header">Terminal</div>
+<div class="shell">
+<p>
+<span class="path">~</span>
+<span class="prompt">$</span>
+cd primeiroApp
+</p>
+<p>
+<span class="path">~</span>
+<span class="prompt">$</span>
+ionic serve
+</p>
+<pre class="output">
+Multiple addresses available.
+Please select which address to use by entering its number from the list below:
+ 1) 10.0.2.15 (Ethernet)
+ 2) localhost
+Address Selection:
+</pre>
+</div>
+</div>
+<p>Na primeira vez que você executa este comando o Ionic pergunta em qual IP você deseja disponibilizar seu App para ser exibido no browser, se você for acessar apenas local esolha a opção localhost:</p>
+<div class="terminal">
+<div class="header">Terminal</div>
+<div class="shell">
+<p>
+<span class="path">~</span>
+<span class="prompt">$</span>
+Address Selection: 2
+</p>
+<pre class="output">
+Selected address: localhost
+Running live reload server: http://localhost:35729
+Watching : [ 'www/**/*', '!www/lib/**/*' ]
+Running dev server: http://localhost:8100
+Ionic server commands, enter:
+  restart or r to restart the client app from the root
+  goto or g and a url to have the app navigate to the given url
+  consolelogs or c to enable/disable console log output
+  serverlogs or s to enable/disable server log output
+  quit or q to shutdown the server and exit
+
+ionic $
+</pre>
+</div>
+</div>
+<p>Seu navegador deve abrir altomaticamete com o app criado até o momento:</p>
+<p class="center">
+  <img src="images/posts/ionicapp1.JPG">
+</p>
+<p>Este é o app criado com um template simples contendo apenas um cabeçalho e o corpo em branco, vamos analisar a estrutura das pastas criadas:</p>
+<p class="center">
+  <img src="images/posts/ionicapp2.JPG">
+</p>
+<p>Os Arquivos, package.json, ionic.project, guilpfile.js, bower.json, .gitignore, .editorconfig, .bowerrc são arquivos de configuração que o Ionic gera e controla automaticamente.</p>
+<p>O config.xml é o arquivo de configuração do seu app, aqui você pode trocar o nome, descrição e autor.</p>
+<p>O nome é apresentado na instalação do app no device e no nome do ícone de lauch:</p>
+<p class="center">
+  <img src="images/posts/ionicapp3.JPG">
+  <img src="images/posts/ionicapp4.JPG">
+</p>
+<p>Veremos mais a diante como trocar o ícone e outros detalhes!</p>
+<p>A pasta www contem todos nossos arquivos HTML/CSS/JS onde iremos desenvolver nosso aplicativo.</p>
+<p>As demais pastas falaremos mais adiantes quando necessário.</p>
+<p>Vamos modificar nosso primeiro aplicativo, dentro da pasta www edite o arquivo index.html adicionando o bloco de HTML abaixo onde esta marcado de vermelho, como está no print:</p>
+<textarea rows="4" cols="50" id="codesnippet_readonly" name="codesnippet_readonly">
+<div class="list card">
+
+  <div class="item item-avatar">
+    <img src="http://fabiorogeriosj.com.br/images/fabiorogeriosj.png">
+    <h2>Fábio Rogério SJ</h2>
+    <p>23 de setembro de 2015</p>
+  </div>
+
+  <div class="item item-body">
+    <img class="full-image" src="http://fabiorogeriosj.com.br/images/posts/free-desenvolvendo-app-ionic_post.jpg">
+    <p>
+      Este é um componente "card" que faz parte dos componentes do Ionic, 
+      estamos usando apenas para testar nosso primeiro app.
+    </p>
+    <p>Nosso objetivo aqui é treinar e conhecer os principais componentes 
+    e recursos do Ionic, e assim poder comprovar como é simples e fácil 
+    criar aplicativos mobile com Ionic!</p>
+    <p>
+      <a href="#" class="subdued">1 Curtida</a>
+      <a href="#" class="subdued">5 Comentários</a>
+    </p>
+  </div>
+
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item" href="#">
+      <i class="icon ion-thumbsup"></i>
+      Curtir
+    </a>
+    <a class="tab-item" href="#">
+      <i class="icon ion-chatbox"></i>
+      Comentar
+    </a>
+    <a class="tab-item" href="#">
+      <i class="icon ion-share"></i>
+      Compartilhar
+    </a>
+  </div>
+
+</div>
+  </textarea>
+<script type="text/javascript">
+    var readOnlyCodeMirror = CodeMirror.fromTextArea(document.getElementById('codesnippet_readonly'), {
+        mode: "html",
+        theme: "default",
+        lineNumbers: true,
+        readOnly: true
+    });  
+</script>
+<p class="center">
+  <img src="images/posts/ionicapp7.JPG">  
+</p>
+<p>Quando você edita algum arquivo dentro da pasta www o aplicativo aberto no navegador é recarregado automaticamente.</p>
+<p>Seu app deverá esta algo parecido com isso:</p>
+<p class="center">
+  <img src="images/posts/ionicapp5.JPG">
+</p>
+<p>Agora vamos instalar a última etapa que é habilitar o ionic para gerar o aplicativo para Android.</p>
+<p>Primeiro vamos baixar o SDK, acesse o link: <a href="https://developer.android.com/sdk/index.html#Other" title="Android Dev" target="_blank">https://developer.android.com/sdk/index.html#Other</a> e baixe o instalador recomendado:</p>
+<p class="center">
+  <img src="images/posts/ionicapp6.JPG">
+</p>
+<p>Ao executar o instalador se você não tiver o Java SE instalado o instalador ira acusar que é necessário primeiro instalar o Java para depois continuar com a instalação, neste caso uma tela parecida com essa será exibida:</p>
+<p class="center">
+  <img src="images/posts/ionicapp8.JPG">
+</p>
+<p>Clique em Visit java.oracle.com e clique em Download JDK:</p>
+<p class="center">
+  <img src="images/posts/ionicapp9.JPG">
+</p>
+<p>Em seguida aceite os termos da Oracle e baixe a versão para seu sistema operacional:</p>
+<p class="center">
+  <img src="images/posts/ionicapp10.JPG">
+</p>
+<p>Faça a instalação do Java e execute novamente o instalador do SDK do Android:</p>
+<p class="center">
+  <img src="images/posts/ionicapp11.JPG">
+</p>
+<p>É importante você manter os arquivos do SDK em uma pasta de fácil acesso pois você vai precisar sempre estar entrando nesta pasta para manter os arquivos do Android atualizado.</p>
+<p>No meu caso eu optei por deixar em c:\Android:</p>
+<p class="center">
+  <img src="images/posts/ionicapp12.JPG">
+</p>
+<p>Ao finalizar deixe marcado a opção [x] Start SDK Manager, o gerenciador do SDK irá ser exibido:</p>
+<p class="center">
+  <img src="images/posts/ionicapp13.JPG">
+</p>
+<p>Neste momento o SDK Manager irá verificar se tem novas atualizações para serem realizadas, se tiver ele ira marca-las altomaticamente e o botão estará exibindo a quantidade de pacotes a serem instalados:</p>
+<p class="center">
+  <img src="images/posts/ionicapp14.JPG">
+</p>
+<p>Clique em "Accept Licence" e em seguida "Install"</p>
+<p class="center">
+  <img src="images/posts/ionicapp15.JPG">
+</p>
+<p>Agora vá tomar uma agua ou um café, pois este processo geralmente é demorado!</p>
+
 
       <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -82,6 +455,7 @@
   ga('send', 'pageview');
 
 </script>  
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
   </body>
 </html>
 

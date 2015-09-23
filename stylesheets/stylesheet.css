@@ -352,6 +352,9 @@ a {
 .main-content .terminal p {
   margin: 0;
 }
+.main-content .terminal p.output {
+  font-weight: 400;
+}
 p.old {
   text-decoration: line-through;
 }
@@ -508,4 +511,12 @@ p.old {
 
 a {
   cursor: pointer;
+}
+.main-content pre.output {
+  background: none;
+  border: none;
+  color: #eeeb82;
+}
+.CodeMirror {
+  font-size: 14px;
 }
