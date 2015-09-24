@@ -412,6 +412,10 @@ ionic $
   <img src="images/posts/ionicapp13.JPG">
 </p>
 <p>Neste momento o SDK Manager irá verificar se tem novas atualizações para serem realizadas, se tiver ele ira marca-las altomaticamente e o botão estará exibindo a quantidade de pacotes a serem instalados:</p>
+<p>Marque também <b>Android 5.1.1 (API 22)</b>:</p>
+<p class="center">
+  <img src="images/posts/ionicapp16.JPG">
+</p>
 <p class="center">
   <img src="images/posts/ionicapp14.JPG">
 </p>
@@ -419,7 +423,107 @@ ionic $
 <p class="center">
   <img src="images/posts/ionicapp15.JPG">
 </p>
-<p>Agora vá tomar uma agua ou um café, pois este processo geralmente é demorado!</p>
+<p>Agora vá tomar uma água ou um café, pois este processo geralmente é demorado!</p>
+<p><b>Para usuários Windows:</b> Concluído o processo de atualização do SDK vamos criar uma variável de ambiente chamada ANDROID_HOME e atualizar a variável PATH, para isso pressione as teclas  Windows + Pause e vá em <b>Configurações avançadas do sistema</b> e em seguida clique em <b>Variáveis de Ambiente</b>: </p>
+<p class="center">
+  <img src="images/posts/ionicapp17.JPG">
+</p>
+<p class="center">
+  <img src="images/posts/ionicapp18.JPG">
+</p>
+<p>Para não precisar reiniciar a maquina vamos criar esta variável em "variáveis de usuário", clique em "Novo" e inclua uma variável chamada ANDROID_HOME apontando para o caminho onde você instalou o SDK:</p>
+<p class="center">
+  <img src="images/posts/ionicapp19.JPG">
+</p>
+<p>Em seguida edite a variável PATH adicionando no final: o caminho da pasta platform-tools:</p>
+<p class="center">
+  <img src="images/posts/ionicapp20.JPG">
+</p>
+<p><b>Adicionando plataforma Android</b></p>
+<p>Agora vamos adicionar a plataforma Android para que o Ionic possa gerar o nosso app para este S.O, no terminal digite: <b>ionic platform android</b></p>
+<div class="terminal">
+<div class="header">Terminal</div>
+<div class="shell">
+<p>
+<span class="path">~</span>
+<span class="prompt">$</span>
+ionic platform android
+</p>
+<pre class="output">
+Updated the hooks directory to have execute permissions
+Adding android project...
+Creating Cordova project for the Android platform:
+        Path: platforms\android
+        Package: com.ionicframework.primeiroapp875548
+        Name: primeiroApp
+        Activity: MainActivity
+        Android target: android-22
+Copying template files...
+Android project created with cordova-android@4.1.1
+Running command: C:\nodejs\node.exe C:\workspace\ioniclab\primeiroApp\hooks\after_prepare\010_add_platform_class.js C:\workspace\ioniclab\primeiroApp
+add to body class: platform-android
+Installing "com.ionic.keyboard" for android
+Installing "cordova-plugin-console" for android
+Installing "cordova-plugin-device" for android
+Installing "cordova-plugin-splashscreen" for android
+Installing "cordova-plugin-whitelist" for android
+</pre>
+</div>
+</div>
+<p>Agora vamos gerar o app. Digite: <b>ionic build android</b></p>
+<div class="terminal">
+<div class="header">Terminal</div>
+<div class="shell">
+<p>
+<span class="path">~</span>
+<span class="prompt">$</span>
+ionic build android
+</p>
+<pre class="output">
+Running command: C:\nodejs\node.exe C:\workspace\ioniclab\primeiroApp\hooks\after_prepare\010_add_platform_class.js C:\workspace\ioniclab\primeiroApp
+add to body class: platform-android
+Running command: cmd "/s /c "C:\workspace\ioniclab\primeiroApp\platforms\android\cordova\build.bat""
+ANDROID_HOME=C:\android
+JAVA_HOME=C:\Program Files\java\jdk1.8.0_60
+Running: C:\workspace\ioniclab\primeiroApp\platforms\android\gradlew cdvBuildDebug -b C:\workspace\ioniclab\primeiroApp\platforms\android\build.gradle -Dorg.gradle.daemon=true
+Downloading http://services.gradle.org/distributions/gradle-2.2.1-all.zip
+................................................................................
+................................................................................
+................................................................................
+................................................................................
+................................................................................
+:preDexDebug
+:dexDebug
+:processDebugJavaRes UP-TO-DATE
+:validateDebugSigning
+:packageDebug
+:zipalignDebug
+:assembleDebug
+:cdvBuildDebug
+
+BUILD SUCCESSFUL
+
+Total time: 4 mins 36.199 secs
+Built the following apk(s):
+    C:\workspace\ioniclab\primeiroApp\platforms\android\build\outputs\apk\android-debug.apk
+
+</pre>
+</div>
+</div>
+<p>Se alguma mensgem de erro for apresentada, relate nos comentários.</p>
+<p>Nesse momento o Ionic gerou o apk, que é o instalador do app no Android, para este primeiro post não vamos usar emulador, pois vou escrever um só sobre emuladores, devices, etc!</p>
+<p>Para testar pegue o app gerado na pasta indicada na última linha do log gerado:</p>
+<p>
+  <b>C:\workspace\ioniclab\primeiroApp\platforms\android\build\outputs\apk\android-debug.apk</b>
+</p>
+<p>Copie este arquivo para seu smartphone e mande instalar, caso seja seu primeiro apk sendo instalado, o Android irá solicitar que você habilite "Fontes desconhecidas". Se tudo der certo você verá o app:</p>
+<p class="center">
+  <img src="images/posts/ionicapp21.JPG">
+</p>
+<p>Show :)</p>
+<p>É isso ai pessoal, espero que este posto ajude vocês a iniciar com Ionic! Daqui pra frente é só alegria.</p>
+<p>Sugestões, reclamações e elogios deixe nos comentários!</p>
+
 
 
       <div id="disqus_thread"></div>

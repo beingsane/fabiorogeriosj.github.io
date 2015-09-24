@@ -348,9 +348,12 @@ a {
   padding-top: 10px;
 }
 .main-content p {
-  margin-bottom: 1em; }
+  margin-bottom: 1em; 
+  font-size: 14px;
+}
 .main-content .terminal p {
   margin: 0;
+  font-size: 16px;
 }
 .main-content .terminal p.output {
   font-weight: 400;
@@ -518,5 +521,8 @@ a {
   color: #eeeb82;
 }
 .CodeMirror {
+  font-size: 14px;
+}
+ul {
   font-size: 14px;
 }
