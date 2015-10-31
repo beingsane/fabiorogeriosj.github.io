@@ -2,6 +2,14 @@ var posts = [
 	{
 		"categoria":"Ionic",
 		"imagem":"post2.png",
+		"titulo":"Desenvolvendo aplicativos mobile com Ionic - Post #2",
+		"data":"12/10/2015",
+		"descricao":"Testar um aplicativo implementado em Ionic não é uma tarefa difícil, pois o próprio framework já dispõe de recursos em seu CLI para nos ajudar nessa tarefa.",
+		"link":"desenvolvendo-aplicativos-mobile-ionic-post-2.html"
+	},
+	{
+		"categoria":"Ionic",
+		"imagem":"post2.png",
 		"titulo":"Desenvolvendo aplicativos mobile com Ionic - Post #1",
 		"data":"21/09/2015",
 		"descricao":"Sempre digo que a maior dificuldade do desenvolvimento de um aplicativo é a ideia, tecnologia é uma parte do processo e não o primordial! Nesta séria de post vou explicar o por que de utilizar o framework ionic e como utiliza-lo.",

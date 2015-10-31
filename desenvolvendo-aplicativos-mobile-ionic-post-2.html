@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="fabiorogeriosj">
+  <head>
+    <meta charset="UTF-8">
+    <!-- alterar para cada artigo -->
+    <meta name="description" content="Testar um aplicativo implementado em Ionic não é uma tarefa difícil, pois o próprio framework já dispõe de recursos em seu CLI para nos ajudar nessa tarefa." />
+    <meta name="keywords" content="ionicframework, ionic, iniciando com ionic, emulando android ionic, fábio rogério sj, blog fábio rogério, blog desenvolvimento, blog webdesign, professor fábio rogério, __FBI__"/>
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Fábio Rogério SJ - Desenvolvendo aplicativos mobile com Ionic - Post #2">
+    <meta property="og:url" content="http://fabiorogeriosj.com.br/desenvolvendo-aplicativos-mobile-ionic-post-2.html">
+    <meta property="og:site_name" content="Fábio Rogério SJ">
+    <meta property="og:image" content="http://fabiorogeriosj.com.br/images/posts/free-desenvolvendo-app-ionic.jpg">
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="1200"/>
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="article:publisher" content="https://facebook.com/fabiorogerio.sj" />
+    <meta property="article:published_time" content="2015-09-24T00:00:00+00:00">
+    <meta property="article:author" content="https://facebook.com/fabiorogerio.sj" />
+
+    <title>Fábio Rogério SJ - Desenvolvendo aplicativos mobile com Ionic - Post #2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+
+    <link rel="stylesheet" href="http://codemirror.net/lib/codemirror.css">
+    <script src="http://codemirror.net/lib/codemirror.js"></script>
+    <script src="http://codemirror.net/addon/edit/matchbrackets.js"></script>
+    <script src="http://codemirror.net/addon/edit/continuecomment.js"></script>
+    <script src="http://codemirror.net/mode/javascript/javascript.js"></script>
+
+  </head>
+  <body ng-controller="postController">
+    <section class="page-header child animation">
+      <div class="hidden animation" ng-class="{not: exibirProfile}">
+        <div ng-init="profile='profile.html'" ng-include="profile"></div>
+      </div>
+
+      <div class="main-content">
+        <a class="menu-ico" ng-click="mostrarProfile()">
+          <img src="images/menu.png">
+        </a>        
+        <!-- titulo -->
+        <h1>Post #Desenvolvendo aplicativos mobile com Ionic - Post #2</h1>
+        <h5>
+          <span ng-bind="post.data"></span> em <a class="more" ng-href="categoria.html#{{post.categoria}}" ng-bind="post.categoria"></a>
+        </h5>
+      </div>
+    </section>
+    <!-- artigo -->
+    <section class="main-content lasts-posts read-post">
+      <div class="preview">
+      	<img src="images/posts/free-desenvolvendo-app-ionic_post.jpg">
+      </div>
+      
+      <p>Testar um aplicativo implementado em Ionic não é uma tarefa difícil, pois o próprio framework já dispõe de recursos em seu CLI para nos ajudar nessa tarefa.</p>
+      <p>Mas só este teste não é o suficiente e em muitos casos não é útil, por exemplo no caso de um app que usa sensores e câmera.</p>
+      <p>Vou destacar aqui o cenário que uso para testar meus apps e quais cuidados tomar.</p>
+      <h2>Quais as opções?</h2>
+      <p>A primeira é o emulador que vem com o Android SDK, já te adianto que essa é a pior opção. Ele já é lento por natureza, porem você pode melhorar um pouco a performance usando uma imagem da Intel, mas mesmo assim é custoso esse método.</p>
+      <p>Para testar em emuladores recomendo o Genymotion, leve e rápido! Irei dar mais detalhes sobre ele abaixo.</p>
+      <p>Outra opção é testar direto em seu device, para isso você precisa baixar o drive do seu device e habilitar alguns parâmetros em configurações.</p>
+      <h2>Testando com Genymotion:</h2>
+      <p>Faça o download da versão desejada, no meu caso eu uso a free que é apenas o emulador com emulação de câmera e GPS sem os recursos de emular acelerômetro, ligação, SMS, multi-touch, suporte entre outros.</p>
+      <p>Para fazer o download acesse: <a href="https://www.genymotion.com/#!/store" title="Genymotion" target="_blank">Genimotion</a>. Neste link você também pode ver o que tem de diferente em casa versão.</p>
+      <p class="center">
+        <img src="images/posts/emulador1.JPG">        
+      </p>
+      <p>Após clicar em download clique em Get Genymotion. Se você já tiver o VirtualBox instalado em seu PC escolha a segunda opção, pois o Genymotion usa uma VM para rodar a imagem do Android.</p>
+      <p class="center">
+        <img src="images/posts/emulador2.JPG">        
+      </p>
+      <p>Após instalado abra o Genymotion e clique em Add. Será solicitado seu login e senha criado no site:</p>
+      <p class="center">
+        <img src="images/posts/emulador3.JPG">        
+      </p>
+      <p>Agora procure uma imagem que você deseja testar. Escolhendo uma imagem, por exemplo Nexus 5, o emulador ira simular o aparelho com relação a configuração resolução, memória, câmera, etc! Após escolher clique em next e conclua o download.</p>
+      <p>Um emulador ira exibir na listagem, para rodar clique em Start:</p>
+      <p class="center">
+        <img src="images/posts/emulador4.JPG">        
+      </p>
+      <p>As vezes, quando já tem o VirtualBox instalado, alguns erros acontecem nesse momento, se ocorrer deixe nos comentários no final dessa página para podermos nos ajudar!</p>
+      <p class="center">
+        <img src="images/posts/emulador1.gif">        
+      </p>
+      <h2>Rodando um app Ionic no Genymotion:</h2>
+      <p>Vamos criar um novo projeto Ionic para testar no nosso emulador, no terminal digite:</p>
+      <div class="terminal">
+        <div class="header">Terminal</div>
+        <div class="shell">
+          <p>
+            <span class="path">~</span><span class="prompt">$</span>ionic start AppTeste tabs<br>
+            <span class="path">~</span><span class="prompt">$</span>ionic platform add android<br>
+            <span class="path">~</span><span class="prompt">$</span>ionic serve
+          </p>
+        </div>
+      </div>
+      <p>Criamos então um projeto com template de tabs, adicionamos a plataforma android e rodamos no browser para testar!</p>
+      <p>Embora o Genymotion seja um emulador, o inonic não reconhece ele como tal, para o ionic o Genymotion é como um device conectado via USB. Para verificarmos se o Genymotion está sendo escudado pelo ionic vamos precisar usar o ADB (Android Debug Bridge), um aplicativo que vem no SDK do Android responsável por fazer a conexão entre um device e o PC!</p>
+      <p>Para testar se o adb está em funcionando entre no terminal e digite:</p>
+      <div class="terminal">
+        <div class="header">Terminal</div>
+        <div class="shell">
+          <p>
+            <span class="path">~</span>
+            <span class="prompt">$</span>adb version
+          </p>
+        </div>
+      </div>
+      <p>Se aparecer a mensagem ‘adb version’ não é reconhecido como..... significa que o path do sdk não está configurado em suas variáveis de ambiente, para configurar siga estes passos: </p>
+      <p><a href="desenvolvendo-aplicativos-mobile-ionic-post-1.html#/#variaveis_ambiente" target="_blank" title="post 1">Preparado ambiente ionic post #1</a></p>
+      <p>Após configurar as variáveis feche e abra novamente o terminal e repita o comando adb version, deverá aparecer algo como:</p>
+      <div class="terminal">
+        <div class="header">Terminal</div>
+        <div class="shell">
+          <pre class="output">Android Debug Bridge version 1.0.32</pre>
+        </div>
+      </div>
+      <p>Com o Genymotion rodando digite:</p>
+      <div class="terminal">
+        <div class="header">Terminal</div>
+        <div class="shell">
+          <p>
+            <span class="path">~</span>
+            <span class="prompt">$</span>adb devices
+          </p>
+        </div>
+      </div>
+      <p>Este comando lista os devices conectados via USB, se seu emulador estiver rodando corretamente deverá ser exibido algo como:</p>
+      <div class="terminal">
+        <div class="header">Terminal</div>
+        <div class="shell">
+<pre class="output">
+List of devices attached
+192.168.56.101:5555     device
+</pre>
+        </div>
+      </div>
+      <a name="ionicrunapp"></a>
+      <p>Agora basta digitar o comando:</p>
+      <div class="terminal">
+        <div class="header">Terminal</div>
+        <div class="shell">
+          <p>
+            <span class="path">~</span>
+            <span class="prompt">$</span>ionic run android
+          </p>
+        </div>
+      </div>
+      <p>Este comando irá gerar o seu app para a plataforma android e em seguida instalar no device encontrado pelo adb:</p>
+
+      <p class="center">
+        <img src="images/posts/ionicrunapp.gif">        
+      </p>
+      <h2>Rodando um app Ionic em um device </h2>
+      <p>Primeira coisa você precisa do drive do seu device instalado, por exemplo se você tiver um device da Samsung digite no Google Samsung Android Drive USB faça o download do drive. Abaixo segue uma lista dos principais drivers dos aparelhos mais utilizado, caso o seu não esteja aqui e você encontrou deixe um comentário para que eu possa atualizar esta lista e a mesma ajudar outro:</p>
+      <p>
+        <ul>
+          <li><a href="http://developer.samsung.com/technical-doc/view.do?v=T000000117" title="Driver samsung">Samsung (Galaxy, Gear)</a></li>
+        </ul>
+      </p>
+      <p>Para que você consiga instalar apps via adb precisamos habilitar o recurso de deputar via usb em seu device, para isso vá em “Configurações” e verifique se a opção “Opções do desenvolvedor” está sendo exibida na listagem. Caso não esteja você precisa entrar em “Sobre o telefone” e clique várias vezes na opção “Número da versão” até a mensagem “Agora você é desenvolvedor” aparecer. Em seguida volte ao menu inicial e entre na opção “Opções do desenvolvedor” e marque a opção “Depuração USB”, feito isso digite o comando $adb devices e veja se seu device ira aparecer ok.</p>
+      <p class="center">
+        <img src="images/posts/habilitadevandroid.gif">        
+      </p>
+      <p>Após instalado e configurado repita os passos de listar o device com adb e o commando ionic ruin android! Pois como falei anteriormente o Ionic reconhece o Genymotion como um device, e neste caso os comandos são os mesmos. Veja os comandos de instalar aqui: </p>
+      <p><a href="desenvolvendo-aplicativos-mobile-ionic-post-2.html#/#ionicrunapp" title="Rodando o app no device">Rodando o app no device</a></p>
+
+
+
+
+      <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'fabiorogriosj';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+      <footer class="site-footer" ng-init="footer='rodape.html'" ng-include="footer"></footer>
+
+    </section>
+
+  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+  <script type="text/javascript" src="js/posts.json.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-12168350-1', 'auto');
+  ga('send', 'pageview');
+
+</script>  
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  </body>
+</html>
+
