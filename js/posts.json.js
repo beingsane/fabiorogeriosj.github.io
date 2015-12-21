@@ -4,7 +4,7 @@ var posts = [
 		"imagem":"post3.png",
 		"titulo":"Extraindo cores de imagens",
 		"data":"21/12/2015",
-		"descricao":"xxxxxxxxxxxxxxxxxxxx.",
+		"descricao":"O design de interfaces é um ponto crucial para aplicações web e mobile! Neste pequeno post vou mostrar um simples código, usando uma lib em JS, para extrair as cores de uma determinada imagem.",
 		"link":"extraindo-cores-imagem-ionic.html"
 	},
 	{
