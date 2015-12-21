@@ -1,8 +1,16 @@
 var posts = [
 	{
 		"categoria":"Ionic",
+		"imagem":"post3.png",
+		"titulo":"Extraindo cores de imagens",
+		"data":"21/12/2015",
+		"descricao":"xxxxxxxxxxxxxxxxxxxx.",
+		"link":"extraindo-cores-imagem-ionic.html"
+	},
+	{
+		"categoria":"Ionic",
 		"imagem":"post2.png",
-		"titulo":"Desenvolvendo aplicativos mobile com Ionic - Post #2",
+		"titulo":"Desenvolvendo aplicativos mobile com Ionic - Post #2 - Emuladores",
 		"data":"12/10/2015",
 		"descricao":"Testar um aplicativo implementado em Ionic não é uma tarefa difícil, pois o próprio framework já dispõe de recursos em seu CLI para nos ajudar nessa tarefa.",
 		"link":"desenvolvendo-aplicativos-mobile-ionic-post-2.html"
@@ -10,7 +18,7 @@ var posts = [
 	{
 		"categoria":"Ionic",
 		"imagem":"post2.png",
-		"titulo":"Desenvolvendo aplicativos mobile com Ionic - Post #1",
+		"titulo":"Desenvolvendo aplicativos mobile com Ionic - Post #1 - Instalando ambiente",
 		"data":"21/09/2015",
 		"descricao":"Sempre digo que a maior dificuldade do desenvolvimento de um aplicativo é a ideia, tecnologia é uma parte do processo e não o primordial! Nesta séria de post vou explicar o por que de utilizar o framework ionic e como utiliza-lo.",
 		"link":"desenvolvendo-aplicativos-mobile-ionic-post-1.html"
