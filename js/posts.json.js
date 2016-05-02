@@ -1,6 +1,14 @@
 var posts = [
 	{
 		"categoria":"Ionic",
+		"imagem":"post4.png",
+		"titulo":"Ebook #1 Ionic Framework - Essencial",
+		"data":"02/05/2016",
+		"descricao":"Este ebook é o primeiro de uma série de ebooks que irão abordar o Ionic Framework, neles você irá encontrar, de forma simples e objetiva, explicações, exemplos e muito código sobre o desenvolvimento de aplicativos móveis híbridos.",
+		"link":"ebook-ionic-framework-essecial.html"
+	},
+	{
+		"categoria":"Ionic",
 		"imagem":"post3.png",
 		"titulo":"Extraindo cores de imagens",
 		"data":"21/12/2015",

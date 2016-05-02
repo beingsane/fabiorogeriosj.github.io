@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="fabiorogeriosj">
+  <head>
+    <meta charset="UTF-8">
+    <!-- alterar para cada artigo -->
+    <meta name="description" content="Este ebook é o primeiro de uma série de ebooks que irão abordar o Ionic Framework, neles você irá encontrar, de forma simples e objetiva, explicações, exemplos e muito código sobre o desenvolvimento de aplicativos móveis híbridos." />
+    <meta name="keywords" content="ionicframework, ionic, iniciando com ionic, ebook ionic portugues, fábio rogério sj, blog fábio rogério, blog desenvolvimento, blog webdesign, professor fábio rogério, __FBI__"/>
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Fábio Rogério SJ - Ebook #1 Ionic Framework - Essencial">
+    <meta property="og:url" content="http://fabiorogeriosj.com.br/ebook-ionic-framework-essecial.html">
+    <meta property="og:site_name" content="Fábio Rogério SJ">
+    <meta property="og:image" content="http://fabiorogeriosj.com.br/images/posts/post4_face.png">
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="1200"/>
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="article:publisher" content="https://facebook.com/fabiorogerio.sj" />
+    <meta property="article:published_time" content="2016-05-02T00:00:00+00:00">
+    <meta property="article:author" content="https://facebook.com/fabiorogerio.sj" />
+
+    <title>Fábio Rogério SJ - Ebook #1 Ionic Framework - Essencial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+
+    <link rel="stylesheet" href="http://codemirror.net/lib/codemirror.css">
+    <script src="http://codemirror.net/lib/codemirror.js"></script>
+    <script src="http://codemirror.net/addon/edit/matchbrackets.js"></script>
+    <script src="http://codemirror.net/addon/edit/continuecomment.js"></script>
+    <script src="http://codemirror.net/mode/javascript/javascript.js"></script>
+
+  </head>
+  <body ng-controller="postController">
+    <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.6&appId=240282459421510";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+    <section class="page-header child animation">
+      <div class="hidden animation" ng-class="{not: exibirProfile}">
+        <div ng-init="profile='profile.html'" ng-include="profile"></div>
+      </div>
+
+      <div class="main-content">
+        <a class="menu-ico" ng-click="mostrarProfile()">
+          <img src="images/menu.png">
+        </a>        
+        <!-- titulo -->
+        <h1>Post Ebook #1 Ionic Framework - Essencial</h1>
+        <h5>
+          <span ng-bind="post.data"></span> em <a class="more" ng-href="categoria.html#{{post.categoria}}" ng-bind="post.categoria"></a>
+        </h5>
+      </div>
+    </section>
+    <!-- artigo -->
+    <section class="main-content lasts-posts read-post">
+      <div class="preview">
+      	<img src="images/posts/ebbok_ionic_framework_essencial.jpg">
+      </div>
+      
+      <p>
+        O desenvolvimento de aplicativos móveis já não é novidade e está bem consolidado em
+        suas plataformas. Mas algumas discussões sempre ocorrem na hora de definir qual
+        plataforma desenvolver, se você procura está reposta neste ebook não irá encontrar,
+        pois são vários os fatores, e pontos de analise, que definem se você deve desenvolver
+        nativo ou híbrido e vamos deixar essa discussão para um outro momento.
+
+      </p>
+      <p>
+        Este ebook é o primeiro de uma série de ebooks que irão abordar o Ionic Framework,
+        neles você irá encontrar, de forma simples e objetiva, explicações, exemplos e muito
+        código sobre o desenvolvimento de aplicativos móveis híbridos. Cada ebook irá abordar
+        um tema específico, exceto este primeiro que é a base de aprendizado para os demais
+        assuntos
+      </p>
+      <p>
+        Todos os ebooks elaborados por mim serão gratuitos, pois o objetivo central destes
+        materiais é o compartilhamento de conhecimento e disseminação deste framework
+        fantástico.
+      </p>
+      <h2>Público alvo</h2>
+      <p>
+        Este ebook foi escrito para você que está começando no mundo do desenvolvimento de
+        aplicativos móveis e tem interesse em aprender sobre uma tecnologia híbrida. Não
+        iremos abordar padrões de desenvolvimento e não vamos utilizar lógicas de
+        programação complexas para facilitar o aprendizado e ter um público mais amplo, tendo
+        em vista que iniciantes também no mundo da programação podem estar lendo este
+        ebook.
+
+      </p>
+      <p>
+        Este material não deverá ser seu único ponto de referência e guia, pois existem outros
+        ebooks, livros e blogs que falam sobre Ionic Framework e podem ampliar seu
+        conhecimento.
+
+      </p>
+      <br>
+      <br>
+      <a class="btn-action" href="https://github.com/fabiorogeriosj/ebook/raw/master/ionic_framework/1_essencial/%231%20Ionic%20Framework%20-%20Essencial.pdf" target="_blank">Baixar Ebook: #1 Ionic Framework - Essencial.pdf</a>
+      <br>
+      <br>
+      <a href="https://twitter.com/intent/tweet?button_hashtag=ebookIonicFrameworkPtBr&text=Baixar%20free%20Ebook%20em%20portugu%C3%AAs%20sobre%20Ionic%20Frameowrk%3A%20%231%20Ionic%20Framework%20-%20Essencial" class="twitter-hashtag-button" data-size="large" data-url="http://goo.gl/dbSpcP">Tweet #ebookIonicFrameworkPtBr</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      <br>
+      <br>
+      <div class="fb-share-button" data-href="http://fabiorogeriosj.com.br/ebook-ionic-framework-essecial.html" data-layout="button_count" data-mobile-iframe="true"></div>
+
+
+      <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'fabiorogriosj';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+      <footer class="site-footer" ng-init="footer='rodape.html'" ng-include="footer"></footer>
+
+    </section>
+
+  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+  <script type="text/javascript" src="js/posts.json.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-12168350-1', 'auto');
+  ga('send', 'pageview');
+
+</script>  
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  </body>
+</html>
+

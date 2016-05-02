@@ -179,7 +179,11 @@ a {
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
-
+.btn-action {
+  background-color: #15965A;
+  color: #fff;
+  padding: 10px;  
+}
 .btn {
   display: inline-block;
   margin-bottom: 1rem;
